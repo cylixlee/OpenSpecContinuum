@@ -30,9 +30,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Update npm to latest
+        run: npm install -g npm@latest
+
+      - name: Ensure npm version supports Trusted Publisher
+        run: |
+          ver="$(npm --version)"
+          IFS='.' read -r major minor patch <<< "${ver}"
+          major="${major:-0}"
+          minor="${minor:-0}"
+          patch="${patch:-0}"
+          if (( major < 11 )) || { (( major == 11 )) && (( minor < 5 )); } || { (( major == 11 )) && (( minor == 5 )) && (( patch < 1 )); }; then
+            echo "Error: npm ${ver} is too old for Trusted Publisher (need >= 11.5.1)."
+            exit 1
+          fi
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -40,5 +55,5 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Publish package
+      - name: Publish package (Trusted Publisher)
         run: npm publish --access public
