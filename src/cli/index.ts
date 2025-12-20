@@ -21,12 +21,12 @@ const { version } = require('../../package.json');
 
 function formatCliVersion(value: string): string {
   const [base, build] = value.split('+');
-  if (!build) return value;
+  if (!build) return `continuum ${value}`;
   const upstreamMatch = build.match(/^upstream(.+)$/);
   if (upstreamMatch) {
-    return `${base} (upstream ${upstreamMatch[1]})`;
+    return `continuum ${base} (upstream ${upstreamMatch[1]})`;
   }
-  return `${base} (+${build})`;
+  return `continuum ${base} (+${build})`;
 }
 
 program

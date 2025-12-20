@@ -47,13 +47,13 @@ function npmPack() {
 
 function formatCliVersion(value) {
   const parts = String(value).split('+');
-  if (parts.length < 2) return String(value);
+  if (parts.length < 2) return `continuum ${String(value)}`;
   const [base, build] = parts;
   const upstreamMatch = /^upstream(.+)$/.exec(build);
   if (upstreamMatch) {
-    return `${base} (upstream ${upstreamMatch[1]})`;
+    return `continuum ${base} (upstream ${upstreamMatch[1]})`;
   }
-  return `${base} (+${build})`;
+  return `continuum ${base} (+${build})`;
 }
 
 function getBinPath(pkgName) {
