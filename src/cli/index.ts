@@ -19,10 +19,20 @@ const program = new Command();
 const require = createRequire(import.meta.url);
 const { version } = require('../../package.json');
 
+function formatCliVersion(value: string): string {
+  const [base, build] = value.split('+');
+  if (!build) return value;
+  const upstreamMatch = build.match(/^upstream(.+)$/);
+  if (upstreamMatch) {
+    return `${base} (upstream ${upstreamMatch[1]})`;
+  }
+  return `${base} (+${build})`;
+}
+
 program
   .name('openspec')
   .description('AI-native system for spec-driven development')
-  .version(version);
+  .version(formatCliVersion(version));
 
 // Global options
 program.option('--no-color', 'Disable color output');

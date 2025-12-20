@@ -1,4 +1,4 @@
-# @fission-ai/openspec
+# @cylixlee/openspec
 
 ## 0.16.0
 

@@ -1,6 +1,6 @@
 {
-  "name": "@fission-ai/openspec",
-  "version": "0.16.0",
+  "name": "@cylixlee/openspec",
+  "version": "0.0.0+upstream0.16.0",
   "description": "AI-native system for spec-driven development",
   "keywords": [
     "openspec",
@@ -9,13 +9,13 @@
     "ai",
     "development"
   ],
-  "homepage": "https://github.com/Fission-AI/OpenSpec",
+  "homepage": "https://github.com/cylixlee/OpenSpecContinuum",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Fission-AI/OpenSpec"
+    "url": "https://github.com/cylixlee/OpenSpecContinuum"
   },
   "license": "MIT",
-  "author": "OpenSpec Contributors",
+  "author": "OpenSpec Contributors & OpenSpec Continuum Contributors",
   "type": "module",
   "publishConfig": {
     "access": "public"
