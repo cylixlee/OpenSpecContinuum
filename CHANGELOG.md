@@ -1,4 +1,10 @@
-# @cylixlee/openspec
+# OpenSpec Continuum
+
+## 0.0.0+upstream0.16.0
+
+OpenSpec Continuum is now a downstream version of [OpenSpec](https://github.com/Fission-AI/OpenSpec). This CHANGELOG will be maintained manually by merging upstream CHANGELOG and add OpenSpec Continuum specific changes according to the code implementation.
+
+# Upstream OpenSpec
 
 ## 0.16.0
 

@@ -7,8 +7,8 @@
 //   project uses pnpm for install/publish, but this guard only needs to pack
 //   locally and verify the installed CLI output.
 // - `npm pack` triggers the package's `prepare` script (build), and
-//   `changeset publish` triggers `prepublishOnly` (also builds here). This
-//   means an explicit build is not strictly necessary for the guard.
+//   `npm publish` triggers `prepublishOnly` (also builds here). This means an
+//   explicit build is not strictly necessary for the guard.
 
 import { execFileSync } from 'child_process';
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'fs';
