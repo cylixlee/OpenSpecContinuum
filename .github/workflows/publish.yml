@@ -40,5 +40,12 @@ jobs:
       - name: Build project
         run: pnpm run build
 
+      - name: Ensure OIDC publish (no npm tokens)
+        run: |
+          if [[ -n "${NPM_TOKEN:-}" || -n "${NODE_AUTH_TOKEN:-}" ]]; then
+            echo "Error: NPM_TOKEN or NODE_AUTH_TOKEN is set. Remove tokens to use Trusted Publisher (OIDC)."
+            exit 1
+          fi
+
       - name: Publish package
-        run: npm publish --access public
+        run: npm publish --provenance --access public
