@@ -1,0 +1,59 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'cv*'
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'cylixlee/OpenSpecContinuum'
+    runs-on: ubuntu-latest
+    environment: Publish
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Verify tag matches package version
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          if [[ "${tag}" != cv* ]]; then
+            echo "Error: tag '${tag}' does not start with 'cv'."
+            exit 1
+          fi
+          tag_version="${tag#cv}"
+          pkg_version="$(node -p "require('./package.json').version")"
+          pkg_version="${pkg_version%%+*}"
+          if [[ "${tag_version}" != "${pkg_version}" ]]; then
+            echo "Error: tag version '${tag_version}' does not match package.json base version '${pkg_version}'."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Publish package
+        run: pnpm publish --access public
