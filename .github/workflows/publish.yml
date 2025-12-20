@@ -18,7 +18,6 @@ jobs:
     if: github.repository == 'cylixlee/OpenSpecContinuum'
     runs-on: ubuntu-latest
     environment: Publish
-    needs: test
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
