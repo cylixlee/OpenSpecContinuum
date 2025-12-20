@@ -57,7 +57,15 @@ describe('openspec CLI e2e basics', () => {
     const pkg = JSON.parse(pkgRaw);
     const result = await runCLI(['--version']);
     expect(result.exitCode).toBe(0);
-    expect(result.stdout.trim()).toBe(pkg.version);
+    const [base, build] = String(pkg.version).split('+');
+    let expected = `continuum ${pkg.version}`;
+    if (build) {
+      const upstreamMatch = build.match(/^upstream(.+)$/);
+      expected = upstreamMatch
+        ? `continuum ${base} (upstream ${upstreamMatch[1]})`
+        : `continuum ${base} (+${build})`;
+    }
+    expect(result.stdout.trim()).toBe(expected);
   });
 
   it('validates the tmp-init fixture with --all --json', async () => {
