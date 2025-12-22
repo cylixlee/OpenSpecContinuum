@@ -39,8 +39,8 @@
     "!dist/**/*.map"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "dev:cli": "pnpm build && node bin/openspec.js",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -51,7 +51,7 @@
     "prepublishOnly": "pnpm run build",
     "postinstall": "node scripts/postinstall.js",
     "check:pack-version": "node scripts/pack-version-check.mjs",
-    "openspec": "tsup && node dist/cli/index.cjs"
+    "openspec": "tsdown && node dist/cli/index.cjs"
   },
   "engines": {
     "node": ">=20.19.0"
@@ -59,7 +59,7 @@
   "devDependencies": {
     "@types/node": "^24.2.0",
     "@vitest/ui": "^3.2.4",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.18.2",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
