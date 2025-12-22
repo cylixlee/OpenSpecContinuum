@@ -23,7 +23,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
   "bin": {
@@ -38,8 +39,8 @@
     "!dist/**/*.map"
   ],
   "scripts": {
-    "build": "node build.js",
-    "dev": "tsc --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "dev:cli": "pnpm build && node bin/openspec.js",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -49,7 +50,8 @@
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run build",
     "postinstall": "node scripts/postinstall.js",
-    "check:pack-version": "node scripts/pack-version-check.mjs"
+    "check:pack-version": "node scripts/pack-version-check.mjs",
+    "openspec": "tsup && node dist/cli/index.cjs"
   },
   "engines": {
     "node": ">=20.19.0"
@@ -57,6 +59,7 @@
   "devDependencies": {
     "@types/node": "^24.2.0",
     "@vitest/ui": "^3.2.4",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
