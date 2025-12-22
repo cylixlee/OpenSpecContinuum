@@ -1,10 +1,38 @@
 # OpenSpec Continuum
 
-## 0.0.0+upstream0.16.0
+## 0.2.0+upstream0.17.0
+
+Introduce `tsdown` to replace manual build script.
+
+## 0.1.0+upstream0.16.0
 
 OpenSpec Continuum is now a downstream version of [OpenSpec](https://github.com/Fission-AI/OpenSpec). This CHANGELOG will be maintained manually by merging upstream CHANGELOG and add OpenSpec Continuum specific changes according to the code implementation.
 
+A new slash-command `/openspec-refine` is added for refining the current proposal, a.k.a the feedback loop.
+
 # Upstream OpenSpec
+
+## 0.17.0
+
+### Minor Changes
+
+- 2e71835: ### New Features
+
+  - Add `openspec config` command for managing global configuration settings
+  - Implement global config directory with XDG Base Directory specification support
+  - Add Oh-my-zsh shell completions support for enhanced CLI experience
+
+  ### Bug Fixes
+
+  - Fix hang in pre-commit hooks by using dynamic imports
+  - Respect XDG_CONFIG_HOME environment variable on all platforms
+  - Resolve Windows compatibility issues in zsh-installer tests
+  - Align cli-completion spec with implementation
+  - Remove hardcoded agent field from slash commands
+
+  ### Documentation
+
+  - Alphabetize AI tools list in README and make it collapsible
 
 ## 0.16.0
 
