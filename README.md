@@ -1,6 +1,6 @@
 # OpenSpec Continuum
 
-OpenSpec Continuum is a downstream, independently maintained fork that closely follows the upstream [OpenSpec](https://github.com/Fission-AI/OpenSpec) project. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving compatibility.
+OpenSpec Continuum is a downstream, independently maintained fork that closely follows the upstream [OpenSpec](https://github.com/Fission-AI/OpenSpec) project. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
 
 ## Upstream Documentation
 
@@ -9,7 +9,7 @@ For full usage docs and CLI behavior, read the upstream
 OpenSpec Continuum stays compatible with upstream workflows and keeps the same
 core semantics, so the upstream documentation applies here as well.
 
-## What's Different in This Fork
+## What's New in Continuum
 
 **Refine workflow**. Continuum adds a dedicated refine command `/openspec-refine` for post-apply adjustments. Refine updates proposal artifacts only (no code
 changes) and requires explicit re-approval before re-applying. You can see [the closed PR in the upstream repo](https://github.com/Fission-AI/OpenSpec/pull/372).
