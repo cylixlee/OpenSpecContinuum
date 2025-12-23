@@ -1,6 +1,6 @@
 {
   "name": "@cylixlee/openspec",
-  "version": "0.2.0+upstream0.17.0",
+  "version": "0.2.2+upstream0.17.2",
   "description": "AI-native system for spec-driven development",
   "keywords": [
     "openspec",
@@ -39,6 +39,7 @@
     "!dist/**/*.map"
   ],
   "scripts": {
+    "lint": "eslint src/",
     "build": "tsdown",
     "dev": "tsdown --watch",
     "dev:cli": "pnpm build && node bin/openspec.js",
@@ -59,8 +60,10 @@
   "devDependencies": {
     "@types/node": "^24.2.0",
     "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.2",
     "tsdown": "^0.18.2",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.50.1",
     "vitest": "^3.2.4"
   },
   "dependencies": {
