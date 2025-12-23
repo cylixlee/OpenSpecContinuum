@@ -1,6 +1,6 @@
 # OpenSpec Continuum
 
-OpenSpec Continuum is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
+OpenSpec Continuum (or abbreviated as Continuum) is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
 
 ## Usage and Core Concepts
 
