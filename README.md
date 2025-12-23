@@ -11,9 +11,8 @@ core semantics, so the upstream documentation applies here as well.
 
 ## What's Different in This Fork
 
-**Refine workflow**. The `/openspec-refine` workflow adds a dedicated refine
-command for post-apply adjustments. Refine updates proposal artifacts only (no code
-changes) and requires explicit re-approval before re-applying. You can see [the rejected PR in the upstream repo](https://github.com/Fission-AI/OpenSpec/pull/372).
+**Refine workflow**. Continuum adds a dedicated refine command `/openspec-refine` for post-apply adjustments. Refine updates proposal artifacts only (no code
+changes) and requires explicit re-approval before re-applying. You can see [the closed PR in the upstream repo](https://github.com/Fission-AI/OpenSpec/pull/372).
 
 **Build pipeline**. The build pipeline replaces the old manual `build.js` with
 `tsdown` for faster, cleaner builds. This keeps the build process simple and maintainable.
