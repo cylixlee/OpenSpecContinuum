@@ -1,6 +1,6 @@
 # OpenSpec Continuum
 
-OpenSpec Continuum (or abbreviated as Continuum) is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
+OpenSpec Continuum (hereafter Continuum) is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
 
 ## Usage and Core Concepts
 
@@ -8,7 +8,7 @@ TODO：flowchart and simple explanation here.
 
 For full usage docs and CLI behavior, read the upstream
 [OpenSpec README](https://github.com/Fission-AI/OpenSpec/blob/main/README.md).
-OpenSpec Continuum stays compatible with upstream workflows and keeps the same
+Continuum stays compatible with upstream workflows and keeps the same
 core semantics, so the upstream documentation applies here as well.
 
 ## What's New in Continuum
