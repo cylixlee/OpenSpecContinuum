@@ -2,9 +2,64 @@
 
 OpenSpec Continuum (hereafter Continuum) is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
 
+AI assistance matters because its outputs are **better aligned when re-consumed by AI systems**. Having AI render intent into structured specs creates a more consistent intermediate layer than natural human language, reducing ambiguity and improving downstream accuracy.
+
 ## Usage and Core Concepts
 
-TODO：flowchart and simple explanation here.
+OpenSpec separates current truth from proposed changes:
+- `openspec/specs/` holds what IS built and deployed.
+- `openspec/changes/` holds proposals for what SHOULD change (with `proposal.md`, `tasks.md`, and spec deltas).
+- Archiving a completed change applies its deltas to `specs/` and moves the change into `openspec/changes/archive/`.
+
+## How It Works
+
+```text
+┌────────────────────┐
+│ Draft Change       │
+│ Proposal           │
+└────────┬───────────┘
+         │ share intent with your AI
+         ▼
+┌────────────────────┐
+│ Review & Align     │
+│ (edit specs/tasks) │◀──── refine loop ───────┐
+└────────┬───────────┘                          │
+         │ approved plan                        │
+         ▼                                      │
+┌────────────────────┐                          │
+│ Implement Tasks    │──────────────────────────┘
+│ (AI writes code)   │
+└────────┬───────────┘
+         │ ship the change
+         ▼
+┌────────────────────┐
+│ Archive & Update   │
+│ Specs (source)     │
+└────────────────────┘
+```
+
+1. Draft a change proposal that captures the spec updates you want.
+2. Review the proposal with your AI assistant; Continuum adds a refine step for feedback-driven edits (no code changes) and requires re-approval before applying again.
+3. Implement tasks that reference the agreed specs.
+4. Archive the change to merge the approved updates back into the source-of-truth specs.
+
+## Common Commands
+
+**OpenSpec CLI (common)**
+- `openspec init`: scaffold the OpenSpec directory structure and base instruction files.
+- `openspec list`: view active changes and their progress.
+- `openspec show`: display a change or spec (supports interactive selection).
+- `openspec validate`: check changes/specs against OpenSpec formatting rules.
+- `openspec archive`: apply deltas and move a change into the archive.
+- `openspec update`: refresh OpenSpec instructions and templates.
+
+**Slash Commands (set up first)**
+Slash commands are created by `openspec init` for your selected tools and become available after restarting your editor/assistant. Once configured, `openspec update` refreshes their content without creating new files.
+
+- `/openspec-proposal`: draft a change proposal and spec deltas.
+- `/openspec-apply`: implement approved tasks in code.
+- `/openspec-refine`: Continuum-only, refine proposal artifacts without code changes.
+- `/openspec-archive`: archive a completed change and update specs.
 
 For full usage docs and CLI behavior, read the upstream
 [OpenSpec README](https://github.com/Fission-AI/OpenSpec/blob/main/README.md).
