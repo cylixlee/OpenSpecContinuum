@@ -5,7 +5,8 @@ const NEW_FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.roo/commands/openspec-proposal.md',
   apply: '.roo/commands/openspec-apply.md',
   refine: '.roo/commands/openspec-refine.md',
-  archive: '.roo/commands/openspec-archive.md'
+  archive: '.roo/commands/openspec-archive.md',
+  learn: '.roo/commands/openspec-learn.md'
 };
 
 export class RooCodeSlashCommandConfigurator extends SlashCommandConfigurator {
@@ -21,7 +22,8 @@ export class RooCodeSlashCommandConfigurator extends SlashCommandConfigurator {
       proposal: 'Scaffold a new OpenSpec change and validate strictly.',
       apply: 'Implement an approved OpenSpec change and keep tasks in sync.',
       refine: 'Refine an approved OpenSpec change without editing code.',
-      archive: 'Archive a deployed OpenSpec change and update specs.'
+      archive: 'Archive a deployed OpenSpec change and update specs.',
+      learn: 'Learn about the project, OpenSpec workflow, specs, and active changes.'
     };
     const description = descriptions[id];
     return `# OpenSpec: ${id.charAt(0).toUpperCase() + id.slice(1)}\n\n${description}`;

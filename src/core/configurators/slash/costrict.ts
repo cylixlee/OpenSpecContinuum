@@ -6,6 +6,7 @@ const FILE_PATHS = {
   apply: '.cospec/openspec/commands/openspec-apply.md',
   refine: '.cospec/openspec/commands/openspec-refine.md',
   archive: '.cospec/openspec/commands/openspec-archive.md',
+  learn: '.cospec/openspec/commands/openspec-learn.md',
 } as const satisfies Record<SlashCommandId, string>;
 
 const FRONTMATTER = {
@@ -24,6 +25,10 @@ argument-hint: change-id and refinement notes
   archive: `---
 description: "Archive a deployed OpenSpec change and update specs."
 argument-hint: change-id
+---`,
+  learn: `---
+description: "Learn about the project, OpenSpec workflow, specs, and active changes."
+argument-hint: (none)
 ---`
 } as const satisfies Record<SlashCommandId, string>;
 

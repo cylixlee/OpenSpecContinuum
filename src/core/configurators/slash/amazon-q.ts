@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.amazonq/prompts/openspec-proposal.md',
   apply: '.amazonq/prompts/openspec-apply.md',
   refine: '.amazonq/prompts/openspec-refine.md',
-  archive: '.amazonq/prompts/openspec-archive.md'
+  archive: '.amazonq/prompts/openspec-archive.md',
+  learn: '.amazonq/prompts/openspec-learn.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -44,7 +45,13 @@ The user wants to archive the following deployed change. Use the openspec instru
 
 <ChangeId>
   $ARGUMENTS
-</ChangeId>`
+</ChangeId>`,
+  learn: `---
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+---
+
+The user wants to learn about the project context and OpenSpec workflow. Follow the openspec instructions to read and understand the project documentation, specifications, and active changes.
+`
 };
 
 export class AmazonQSlashCommandConfigurator extends SlashCommandConfigurator {

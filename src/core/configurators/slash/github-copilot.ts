@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.github/prompts/openspec-proposal.prompt.md',
   apply: '.github/prompts/openspec-apply.prompt.md',
   refine: '.github/prompts/openspec-refine.prompt.md',
-  archive: '.github/prompts/openspec-archive.prompt.md'
+  archive: '.github/prompts/openspec-archive.prompt.md',
+  learn: '.github/prompts/openspec-learn.prompt.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -28,7 +29,12 @@ $ARGUMENTS`,
 description: Archive a deployed OpenSpec change and update specs.
 ---
 
-$ARGUMENTS`
+$ARGUMENTS`,
+  learn: `---
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+---
+
+`
 };
 
 export class GitHubCopilotSlashCommandConfigurator extends SlashCommandConfigurator {

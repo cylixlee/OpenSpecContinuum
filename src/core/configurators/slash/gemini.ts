@@ -5,14 +5,16 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.gemini/commands/openspec/proposal.toml',
   apply: '.gemini/commands/openspec/apply.toml',
   refine: '.gemini/commands/openspec/refine.toml',
-  archive: '.gemini/commands/openspec/archive.toml'
+  archive: '.gemini/commands/openspec/archive.toml',
+  learn: '.gemini/commands/openspec/learn.toml'
 };
 
 const DESCRIPTIONS: Record<SlashCommandId, string> = {
   proposal: 'Scaffold a new OpenSpec change and validate strictly.',
   apply: 'Implement an approved OpenSpec change and keep tasks in sync.',
   refine: 'Refine an approved OpenSpec change without editing code.',
-  archive: 'Archive a deployed OpenSpec change and update specs.'
+  archive: 'Archive a deployed OpenSpec change and update specs.',
+  learn: 'Learn about the project, OpenSpec workflow, specs, and active changes.'
 };
 
 export class GeminiSlashCommandConfigurator extends TomlSlashCommandConfigurator {

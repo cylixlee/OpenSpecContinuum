@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.augment/commands/openspec-proposal.md',
   apply: '.augment/commands/openspec-apply.md',
   refine: '.augment/commands/openspec-refine.md',
-  archive: '.augment/commands/openspec-archive.md'
+  archive: '.augment/commands/openspec-archive.md',
+  learn: '.augment/commands/openspec-learn.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -24,6 +25,10 @@ argument-hint: change-id and refinement notes
   archive: `---
 description: Archive a deployed OpenSpec change and update specs.
 argument-hint: change-id
+---`,
+  learn: `---
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+argument-hint: (none)
 ---`
 };
 

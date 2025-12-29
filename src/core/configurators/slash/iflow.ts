@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.iflow/commands/openspec-proposal.md',
   apply: '.iflow/commands/openspec-apply.md',
   refine: '.iflow/commands/openspec-refine.md',
-  archive: '.iflow/commands/openspec-archive.md'
+  archive: '.iflow/commands/openspec-archive.md',
+  learn: '.iflow/commands/openspec-learn.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -32,6 +33,12 @@ name: /openspec-archive
 id: openspec-archive
 category: OpenSpec
 description: Archive a deployed OpenSpec change and update specs.
+---`,
+  learn: `---
+name: /openspec-learn
+id: openspec-learn
+category: OpenSpec
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
 ---`
 };
 

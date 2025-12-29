@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.crush/commands/openspec/proposal.md',
   apply: '.crush/commands/openspec/apply.md',
   refine: '.crush/commands/openspec/refine.md',
-  archive: '.crush/commands/openspec/archive.md'
+  archive: '.crush/commands/openspec/archive.md',
+  learn: '.crush/commands/openspec/learn.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -32,6 +33,12 @@ name: OpenSpec: Archive
 description: Archive a deployed OpenSpec change and update specs.
 category: OpenSpec
 tags: [openspec, archive]
+---`,
+  learn: `---
+name: OpenSpec: Learn
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+category: OpenSpec
+tags: [openspec, learn]
 ---`
 };
 

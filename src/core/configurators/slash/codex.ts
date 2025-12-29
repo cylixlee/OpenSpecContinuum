@@ -11,6 +11,7 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   apply: ".codex/prompts/openspec-apply.md",
   refine: ".codex/prompts/openspec-refine.md",
   archive: ".codex/prompts/openspec-archive.md",
+  learn: ".codex/prompts/openspec-learn.md",
 };
 
 export class CodexSlashCommandConfigurator extends SlashCommandConfigurator {
@@ -49,6 +50,12 @@ argument-hint: change-id
 ---
 
 $ARGUMENTS`,
+      learn: `---
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+argument-hint: (none)
+---
+
+`,
     };
     return frontmatter[id];
   }
