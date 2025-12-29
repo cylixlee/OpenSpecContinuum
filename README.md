@@ -56,9 +56,10 @@ OpenSpec separates current truth from proposed changes:
 **Slash Commands (set up first)**
 Slash commands are created by `openspec init` for your selected tools and become available after restarting your editor/assistant. Once configured, `openspec update` refreshes their content without creating new files.
 
+- `/openspec-learn`: *Continuum-only*, learn about the project context, OpenSpec workflow, existing specifications, and active changes.
 - `/openspec-proposal`: draft a change proposal and spec deltas.
 - `/openspec-apply`: implement approved tasks in code.
-- `/openspec-refine`: Continuum-only, refine proposal artifacts without code changes.
+- `/openspec-refine`: *Continuum-only*, refine proposal artifacts without code changes.
 - `/openspec-archive`: archive a completed change and update specs.
 
 For full usage docs and CLI behavior, read the upstream
@@ -67,6 +68,8 @@ Continuum stays compatible with upstream workflows and keeps the same
 core semantics, so the upstream documentation applies here as well.
 
 ## What's New in Continuum
+
+**Learn command**. Continuum adds `/openspec-learn` to help agents quickly understand the project context, OpenSpec workflow, existing specifications, and active changes. This command guides agents through reading project documentation, exploring source code, and understanding current implementation status.
 
 **Refine workflow**. Continuum adds a dedicated refine command `/openspec-refine` for post-apply adjustments. Refine updates proposal artifacts only (no code
 changes) and requires explicit re-approval before re-applying. You can see [the closed PR in the upstream repo](https://github.com/Fission-AI/OpenSpec/pull/372).
