@@ -1,4 +1,4 @@
-export type SlashCommandId = 'proposal' | 'apply' | 'refine' | 'archive';
+export type SlashCommandId = 'proposal' | 'apply' | 'refine' | 'archive' | 'learn';
 
 const baseGuardrails = `**Guardrails**
 - Favor straightforward, minimal implementations first and add complexity only when it is requested or clearly required.
@@ -68,13 +68,64 @@ const archiveReferences = `**Reference**
 - Use \`openspec list\` to confirm change IDs before archiving.
 - Inspect refreshed specs with \`openspec list --specs\` and address any validation issues before handing off.`;
 
+const learnGuardrails = `${baseGuardrails}
+- This is a read-only learning phase. Do not make any code changes or file modifications.
+- Focus on understanding the project context, OpenSpec workflow, and current active changes.
+- If you encounter missing files or unclear information, note it and proceed with available information.`;
+
+const learnSteps = `**Steps**
+1. Read \`AGENTS.md\` to understand that the \`openspec/\` directory contains all OpenSpec-generated specifications and proposals.
+2. Read \`openspec/AGENTS.md\` to understand the OpenSpec-based workflow.
+3. Read \`openspec/project.md\` to get an overview of the project (high-level information only).
+4. Explore \`openspec/specs/\` directory to understand existing archived specifications:
+   - Use \`openspec list --specs\` to list all specs
+   - Read key spec files to understand the established guidelines and conventions that must be followed in future development
+5. Explore \`openspec/changes/\` directory to identify active (non-archived) proposals:
+   - Use \`openspec list\` to list all changes and identify active proposals
+   - For each active proposal, read:
+     - \`proposal.md\`: Understand the motivation and scope of the change
+     - \`design.md\`: Understand the design approach and implementation details
+     - \`tasks.md\`: Review the task list including completed and pending tasks
+     - \`specs/\` directory: Review spec deltas (new/modified/deleted content) that will be applied to existing specs
+6. Explore the source code to understand the actual implementation:
+   - Identify the main source directories
+   - Read key entry points and main modules to understand the project structure
+   - For active proposals, explore the relevant source code files to understand:
+     - Current implementation state
+     - Code patterns and conventions used
+     - How the proposed changes will integrate with existing code
+   - Search for relevant code patterns, functions, or classes mentioned in the proposals
+   - Review test files to understand expected behavior and testing conventions
+7. Synthesize the information to form a comprehensive understanding of:
+   - Project overview and goals
+   - OpenSpec workflow and conventions
+   - Existing specifications and guidelines
+   - Source code structure and implementation patterns
+   - Current active changes and their implementation status
+   - How the active proposals relate to the actual codebase
+8. Report back with a concise summary of what you learned, highlighting:
+   - Project context and architecture
+   - Key OpenSpec conventions
+   - Source code structure and patterns
+   - Active changes and their status
+   - Any areas that need clarification`;
+
+const learnReferences = `**Reference**
+- Use \`openspec list\` to see all active changes
+- Use \`openspec list --specs\` to see all archived specifications
+- Use \`openspec show <id>\` to view details of specific changes or specs
+- Search the source code for relevant patterns
+- Read \`package.json\` to understand project dependencies and scripts
+- Read \`README.md\` (if present) for additional project information`;
+
 export const slashCommandBodies: Record<SlashCommandId, string> = {
-  proposal: [proposalGuardrails, proposalSteps, proposalReferences].join('\n\n'),
-  apply: [baseGuardrails, applySteps, applyReferences].join('\n\n'),
-  refine: [refineGuardrails, refineSteps, refineReferences].join('\n\n'),
-  archive: [baseGuardrails, archiveSteps, archiveReferences].join('\n\n')
+   proposal: [proposalGuardrails, proposalSteps, proposalReferences].join('\n\n'),
+   apply: [baseGuardrails, applySteps, applyReferences].join('\n\n'),
+   refine: [refineGuardrails, refineSteps, refineReferences].join('\n\n'),
+   archive: [baseGuardrails, archiveSteps, archiveReferences].join('\n\n'),
+   learn: [learnGuardrails, learnSteps, learnReferences].join('\n\n')
 };
 
 export function getSlashCommandBody(id: SlashCommandId): string {
-  return slashCommandBodies[id];
+   return slashCommandBodies[id];
 }

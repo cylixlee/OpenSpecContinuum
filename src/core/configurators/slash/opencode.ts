@@ -8,6 +8,7 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   apply: ".opencode/command/openspec-apply.md",
   refine: ".opencode/command/openspec-refine.md",
   archive: ".opencode/command/openspec-archive.md",
+  learn: ".opencode/command/openspec-learn.md",
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -41,6 +42,11 @@ description: Archive a deployed OpenSpec change and update specs.
 <ChangeId>
   $ARGUMENTS
 </ChangeId>
+`,
+  learn: `---
+description: Learn about the project, OpenSpec workflow, specs, and active changes.
+---
+The user wants to learn about the project context and OpenSpec workflow. Follow the openspec instructions to read and understand the project documentation, specifications, and active changes.
 `,
 };
 

@@ -16,14 +16,16 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.qwen/commands/openspec-proposal.toml',
   apply: '.qwen/commands/openspec-apply.toml',
   refine: '.qwen/commands/openspec-refine.toml',
-  archive: '.qwen/commands/openspec-archive.toml'
+  archive: '.qwen/commands/openspec-archive.toml',
+  learn: '.qwen/commands/openspec-learn.toml'
 };
 
 const DESCRIPTIONS: Record<SlashCommandId, string> = {
   proposal: 'Scaffold a new OpenSpec change and validate strictly.',
   apply: 'Implement an approved OpenSpec change and keep tasks in sync.',
   refine: 'Refine an approved OpenSpec change without editing code.',
-  archive: 'Archive a deployed OpenSpec change and update specs.'
+  archive: 'Archive a deployed OpenSpec change and update specs.',
+  learn: 'Learn about the project, OpenSpec workflow, specs, and active changes.'
 };
 
 /**

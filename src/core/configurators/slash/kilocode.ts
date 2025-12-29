@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: ".kilocode/workflows/openspec-proposal.md",
   apply: ".kilocode/workflows/openspec-apply.md",
   refine: ".kilocode/workflows/openspec-refine.md",
-  archive: ".kilocode/workflows/openspec-archive.md"
+  archive: ".kilocode/workflows/openspec-archive.md",
+  learn: ".kilocode/workflows/openspec-learn.md"
 };
 
 export class KiloCodeSlashCommandConfigurator extends SlashCommandConfigurator {

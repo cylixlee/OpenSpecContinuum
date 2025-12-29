@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.clinerules/workflows/openspec-proposal.md',
   apply: '.clinerules/workflows/openspec-apply.md',
   refine: '.clinerules/workflows/openspec-refine.md',
-  archive: '.clinerules/workflows/openspec-archive.md'
+  archive: '.clinerules/workflows/openspec-archive.md',
+  learn: '.clinerules/workflows/openspec-learn.md'
 };
 
 export class ClineSlashCommandConfigurator extends SlashCommandConfigurator {
@@ -21,7 +22,8 @@ export class ClineSlashCommandConfigurator extends SlashCommandConfigurator {
       proposal: 'Scaffold a new OpenSpec change and validate strictly.',
       apply: 'Implement an approved OpenSpec change and keep tasks in sync.',
       refine: 'Refine an approved OpenSpec change without editing code.',
-      archive: 'Archive a deployed OpenSpec change and update specs.'
+      archive: 'Archive a deployed OpenSpec change and update specs.',
+      learn: 'Learn about the project, OpenSpec workflow, specs, and active changes.'
     };
     const description = descriptions[id];
     return `# OpenSpec: ${id.charAt(0).toUpperCase() + id.slice(1)}\n\n${description}`;

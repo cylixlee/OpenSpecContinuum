@@ -5,7 +5,8 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.windsurf/workflows/openspec-proposal.md',
   apply: '.windsurf/workflows/openspec-apply.md',
   refine: '.windsurf/workflows/openspec-refine.md',
-  archive: '.windsurf/workflows/openspec-archive.md'
+  archive: '.windsurf/workflows/openspec-archive.md',
+  learn: '.windsurf/workflows/openspec-learn.md'
 };
 
 export class WindsurfSlashCommandConfigurator extends SlashCommandConfigurator {
@@ -21,7 +22,8 @@ export class WindsurfSlashCommandConfigurator extends SlashCommandConfigurator {
       proposal: 'Scaffold a new OpenSpec change and validate strictly.',
       apply: 'Implement an approved OpenSpec change and keep tasks in sync.',
       refine: 'Refine an approved OpenSpec change without editing code.',
-      archive: 'Archive a deployed OpenSpec change and update specs.'
+      archive: 'Archive a deployed OpenSpec change and update specs.',
+      learn: 'Learn about the project, OpenSpec workflow, specs, and active changes.'
     };
     const description = descriptions[id];
     return `---\ndescription: ${description}\nauto_execution_mode: 3\n---`;
