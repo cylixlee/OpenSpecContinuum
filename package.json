@@ -1,6 +1,6 @@
 {
   "name": "@cylixlee/openspec",
-  "version": "0.2.2+upstream0.17.2",
+  "version": "0.3.0+upstream0.17.2",
   "description": "AI-native system for spec-driven development",
   "keywords": [
     "openspec",

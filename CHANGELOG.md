@@ -1,5 +1,9 @@
 # OpenSpec Continuum
 
+## 0.3.0+upstream0.17.2
+
+Add new slash-command `/openspec-learn` for agents to quickly learn about the project context, OpenSpec workflow, existing specifications, and active changes. The command guides agents through reading project documentation, exploring source code, and understanding current implementation status to help them get up to speed quickly.
+
 ## 0.2.2+upstream0.17.2
 
 Sync with upstream.
