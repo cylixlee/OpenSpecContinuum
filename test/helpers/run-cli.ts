@@ -84,6 +84,8 @@ export async function runCLI(args: string[] = [], options: RunCLIOptions = {}): 
       env: {
         ...process.env,
         OPEN_SPEC_INTERACTIVE: '0',
+        // Disable telemetry in tests to avoid side effects
+        CI: 'true',
         ...options.env,
       },
       stdio: ['pipe', 'pipe', 'pipe'],
