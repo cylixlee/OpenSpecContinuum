@@ -1,6 +1,6 @@
 {
   "name": "@cylixlee/openspec",
-  "version": "0.3.0+upstream0.17.2",
+  "version": "0.4.0+upstream0.20.0",
   "description": "AI-native system for spec-driven development",
   "keywords": [
     "openspec",
@@ -33,6 +33,7 @@
   "files": [
     "dist",
     "bin",
+    "schemas",
     "scripts/postinstall.js",
     "!dist/**/*.test.js",
     "!dist/**/__tests__",
@@ -52,12 +53,17 @@
     "prepublishOnly": "pnpm run build",
     "postinstall": "node scripts/postinstall.js",
     "check:pack-version": "node scripts/pack-version-check.mjs",
+    "release": "pnpm run release:ci",
+    "release:ci": "pnpm run check:pack-version && pnpm exec changeset publish",
+    "changeset": "changeset",
     "openspec": "tsdown && node dist/cli/index.cjs"
   },
   "engines": {
     "node": ">=20.19.0"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.27.7",
     "@types/node": "^24.2.0",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.2",
@@ -71,7 +77,10 @@
     "@inquirer/prompts": "^7.8.0",
     "chalk": "^5.5.0",
     "commander": "^14.0.0",
+    "fast-glob": "^3.3.3",
     "ora": "^8.2.0",
+    "posthog-node": "^5.20.0",
+    "yaml": "^2.8.2",
     "zod": "^4.0.17"
   }
 }
