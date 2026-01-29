@@ -1,3 +1,11 @@
+> [!NOTE]
+>
+> This project is archived as I no longer use OpenSpec. While OpenSpec is useful for small vibe-coded projects, its token consumption becomes prohibitive at scale. Its core paradigm is to define cross-task **restrictions** — essentially declaring what an agent _cannot_ do. **Unfortunately, the possible constraints are endless, while the session context is always finite**.
+> 
+>In contrast, [**Agent Skills**](https://agentskills.io) present a more scalable solution. They define _how_ to perform specific types of tasks and provide external resources for agents to reference on demand. This approach does not assume the agent has full project awareness upfront; instead, it learns when necessary. This significantly reduces token usage and enables smoother transitions between sessions.
+>
+> I extend my gratitude to the OpenSpec project for lighting the initial path. Now, as we turn towards a more scalable horizon, I invite you to join in exploring the unfolding landscape of [**Agent Skills**](https://agentskills.io).
+
 # OpenSpec Continuum
 
 OpenSpec Continuum (hereafter Continuum) is an independently maintained downstream of [OpenSpec](https://github.com/Fission-AI/OpenSpec) that closely follows the upstream. It builds upon all official upstream releases and additionally maintains a curated collection of community-driven, practical improvements that have not been merged upstream, offering greater utility while preserving maximum compatibility.
